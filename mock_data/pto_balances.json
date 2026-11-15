@@ -1,0 +1,31 @@
+{
+  "_meta": {
+    "synthetic": true,
+    "as_of_date": "2027-02-01",
+    "note": "available_days = accrued_ytd_days + carryover_days - used_ytd_days - pending_days. Two pay periods have accrued in 2027. Contractors and interns have no record because they do not accrue PTO.",
+    "international_days_note": "international_working_days_used_ytd counts toward the 20 working day limit in POL-005 section 5.1."
+  },
+  "pto_balances": [
+    {"employee_id": "E1000", "annual_entitlement_days": 25, "accrued_ytd_days": 2.08, "carryover_days": 5.0, "carryover_expires": "2027-03-31", "used_ytd_days": 0.0, "pending_days": 0.0, "available_days": 7.08, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1001", "annual_entitlement_days": 25, "accrued_ytd_days": 2.08, "carryover_days": 3.0, "carryover_expires": "2027-03-31", "used_ytd_days": 1.0, "pending_days": 0.0, "available_days": 4.08, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1002", "annual_entitlement_days": 25, "accrued_ytd_days": 2.08, "carryover_days": 5.0, "carryover_expires": "2027-03-31", "used_ytd_days": 0.0, "pending_days": 2.0, "available_days": 5.08, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1003", "annual_entitlement_days": 25, "accrued_ytd_days": 2.08, "carryover_days": 2.0, "carryover_expires": "2027-03-31", "used_ytd_days": 0.0, "pending_days": 0.0, "available_days": 4.08, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1004", "annual_entitlement_days": 20, "accrued_ytd_days": 1.67, "carryover_days": 4.0, "carryover_expires": "2027-03-31", "used_ytd_days": 1.0, "pending_days": 0.0, "available_days": 4.67, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1005", "annual_entitlement_days": 25, "accrued_ytd_days": 2.08, "carryover_days": 5.0, "carryover_expires": "2027-03-31", "used_ytd_days": 0.0, "pending_days": 0.0, "available_days": 7.08, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1006", "annual_entitlement_days": 20, "accrued_ytd_days": 1.67, "carryover_days": 0.0, "carryover_expires": null, "used_ytd_days": 0.0, "pending_days": 0.0, "available_days": 1.67, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1007", "annual_entitlement_days": 20, "accrued_ytd_days": 1.67, "carryover_days": 5.0, "carryover_expires": "2027-03-31", "used_ytd_days": 0.0, "pending_days": 0.0, "available_days": 6.67, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1008", "annual_entitlement_days": 25, "accrued_ytd_days": 2.08, "carryover_days": 5.0, "carryover_expires": "2027-03-31", "used_ytd_days": 2.0, "pending_days": 0.0, "available_days": 5.08, "international_working_days_used_ytd": 12},
+    {"employee_id": "E1009", "annual_entitlement_days": 20, "accrued_ytd_days": 1.67, "carryover_days": 1.5, "carryover_expires": "2027-03-31", "used_ytd_days": 0.0, "pending_days": 0.0, "available_days": 3.17, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1010", "annual_entitlement_days": 15, "accrued_ytd_days": 1.25, "carryover_days": 0.0, "carryover_expires": null, "used_ytd_days": 2.75, "pending_days": 0.0, "available_days": -1.5, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1011", "annual_entitlement_days": 22, "accrued_ytd_days": 1.83, "carryover_days": 4.0, "carryover_expires": "2027-04-30", "used_ytd_days": 0.0, "pending_days": 3.0, "available_days": 2.83, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1013", "annual_entitlement_days": 25, "accrued_ytd_days": 2.08, "carryover_days": 5.0, "carryover_expires": "2027-04-30", "used_ytd_days": 1.0, "pending_days": 0.0, "available_days": 6.08, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1014", "annual_entitlement_days": 9, "accrued_ytd_days": 0.75, "carryover_days": 1.0, "carryover_expires": "2027-03-31", "used_ytd_days": 0.0, "pending_days": 0.0, "available_days": 1.75, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1015", "annual_entitlement_days": 15, "accrued_ytd_days": 0.83, "carryover_days": 0.0, "carryover_expires": null, "used_ytd_days": 0.0, "pending_days": 0.0, "available_days": 0.83, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1017", "annual_entitlement_days": 15, "accrued_ytd_days": 1.25, "carryover_days": 0.5, "carryover_expires": "2027-03-31", "used_ytd_days": 1.0, "pending_days": 0.0, "available_days": 0.75, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1018", "annual_entitlement_days": 20, "accrued_ytd_days": 1.67, "carryover_days": 5.0, "carryover_expires": "2027-03-31", "used_ytd_days": 0.0, "pending_days": 0.0, "available_days": 6.67, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1019", "annual_entitlement_days": 25, "accrued_ytd_days": 2.08, "carryover_days": 2.0, "carryover_expires": "2027-03-31", "used_ytd_days": 0.0, "pending_days": 0.0, "available_days": 4.08, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1020", "annual_entitlement_days": 15, "accrued_ytd_days": 1.25, "carryover_days": 2.5, "carryover_expires": "2027-03-31", "used_ytd_days": 0.0, "pending_days": 0.0, "available_days": 3.75, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1021", "annual_entitlement_days": 20, "accrued_ytd_days": 1.67, "carryover_days": 3.0, "carryover_expires": "2027-03-31", "used_ytd_days": 0.5, "pending_days": 0.0, "available_days": 4.17, "international_working_days_used_ytd": 0},
+    {"employee_id": "E1022", "annual_entitlement_days": 20, "accrued_ytd_days": 1.67, "carryover_days": 2.0, "carryover_expires": "2027-03-31", "used_ytd_days": 1.0, "pending_days": 0.0, "available_days": 2.67, "international_working_days_used_ytd": 0}
+  ]
+}

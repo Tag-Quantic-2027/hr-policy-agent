@@ -1,0 +1,13 @@
+{
+  "_meta": {
+    "synthetic": true,
+    "as_of_date": "2027-02-01",
+    "note": "Seed tickets. Tickets the agent creates at runtime are mock actions kept separately and never written back to this file."
+  },
+  "tickets": [
+    {"ticket_id": "T-5001", "employee_id": "E1007", "category": "Expense Question", "priority": "P3", "status": "closed", "created_date": "2027-01-12", "summary": "Asked whether a standing desk can be claimed against the home office stipend.", "created_via_assistant": false},
+    {"ticket_id": "T-5002", "employee_id": "E1011", "category": "PTO Request", "priority": "P3", "status": "pending_manager_approval", "created_date": "2027-01-25", "summary": "PTO request for 3 working days, February 22 to February 24, 2027.", "created_via_assistant": false},
+    {"ticket_id": "T-5003", "employee_id": "E1008", "category": "Work From Anywhere", "priority": "P3", "status": "closed", "created_date": "2026-12-01", "summary": "International remote work from France for 12 working days, January 4 to January 19, 2027. Approved by manager and People Operations.", "created_via_assistant": false},
+    {"ticket_id": "T-5004", "employee_id": "E1015", "category": "Onboarding", "priority": "P2", "status": "open", "created_date": "2027-01-29", "summary": "External monitor requested for home workspace has not arrived.", "created_via_assistant": false}
+  ]
+}

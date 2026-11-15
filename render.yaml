@@ -1,0 +1,28 @@
+# Render Blueprint: the whole deployment, written down so it can be repeated.
+# In Render: New > Blueprint, choose this repository, then paste the API key when asked.
+
+services:
+  - type: web
+    name: hr-policy-agent
+    runtime: python
+    plan: free
+    # Install, then run one search. That search builds the vector index (.chroma) and
+    # downloads the embedding model (.model_cache) now, not on a visitor's first question.
+    buildCommand: pip install -r requirements.txt && RETRIEVAL_MODE=hybrid python -m app.rag.index "build the search index"
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    # Deploy only after the GitHub Actions checks pass on main.
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.16"
+      - key: ANTHROPIC_API_KEY
+        sync: false # never stored in this file: Render asks for it in the dashboard
+      - key: LLM_MODEL
+        value: claude-haiku-5-5
+      # "hybrid" uses about 420 MB of the free tier's 512 MB. If the service runs out
+      # of memory, change this to "keyword" (about 160 MB) in the Render dashboard.
+      - key: RETRIEVAL_MODE
+        value: hybrid
+      - key: DAILY_CHAT_LIMIT
+        value: "300"

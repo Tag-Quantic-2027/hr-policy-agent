@@ -1,0 +1,148 @@
+DOC_ID: POL-008
+TITLE: Equipment and IT Asset Policy
+OWNER: IT Operations
+EFFECTIVE_DATE: 2026-06-01
+VERSION: 3.2
+
+EQUIPMENT AND IT ASSET POLICY
+
+Fernhill Technologies is a fictional company created for a course project. Every person, office and figure in this document is invented.
+
+
+1. PURPOSE AND SCOPE
+
+This policy explains what equipment Fernhill Technologies provides, how to request more, how to look after it and how to return it. It applies to full-time employees, part-time employees and interns. Independent contractors use their own equipment unless their contract says otherwise. A contractor who is issued Fernhill equipment must follow this policy for that equipment.
+
+Company equipment remains the property of Fernhill at all times. It is provided for work. Limited personal use is tolerated, such as checking personal email at lunch, as long as it follows the Information and Data Security Policy (POL-006).
+
+
+2. STANDARD EQUIPMENT
+
+Every employee and intern receives the following on or before their first day:
+
+- One company laptop. Engineering and Design roles receive the performance model. All other roles receive the standard model.
+- One laptop charger.
+- One privacy screen for the laptop.
+- One headset.
+
+New equipment is shipped to arrive at least 5 business days before the start date for hybrid and fully remote employees. Office-based employees collect their equipment in the office on their first day. See the Onboarding and Probation Procedure (POL-011) section 3.
+
+
+3. ADDITIONAL EQUIPMENT
+
+3.1 What you can request
+
+Hybrid and fully remote employees may request the following for their home workspace, at no cost to them:
+
+- One external monitor, up to 27 inches.
+- One keyboard and one mouse.
+- One docking station.
+- One webcam, if the laptop camera is not adequate.
+
+Office desks are already fitted with a monitor, keyboard, mouse and docking station.
+
+3.2 How to request
+
+Raise a ticket in the IT portal under the category "Equipment Request". Requests for the items in section 3.1 are approved by IT and need no manager approval. IT ships the item within 10 business days.
+
+3.3 Non-standard equipment
+
+Anything not listed in section 2 or section 3.1 is non-standard equipment. Examples are a second monitor, a more powerful laptop, or specialist input devices. Non-standard equipment needs a written business reason and approval from your manager. Items costing more than USD 1,000 also need approval from your department director.
+
+3.4 Furniture
+
+Fernhill does not ship furniture. Desks, chairs and similar items for a home workspace are bought by the employee and claimed against the one-time home office stipend in the Expense Reimbursement and Travel Policy (POL-007) section 6.1.
+
+3.5 Do not buy your own computer equipment
+
+Do not buy a laptop, monitor or other computer equipment yourself and claim it as an expense. Laptops and computers are never reimbursable (POL-007 section 6.3). Always request computer equipment from IT.
+
+
+4. REFRESH CYCLE
+
+Laptops are replaced every 3 years. IT contacts you about 60 calendar days before your laptop reaches 3 years of age. A laptop may be replaced earlier if it is faulty and cannot be repaired economically, or if your role changes and needs a different model. Monitors and accessories are replaced only when they fail.
+
+
+5. LOOKING AFTER EQUIPMENT
+
+You are expected to take reasonable care of company equipment:
+
+- Keep it secure. Do not leave it visible in a parked car. Do not check a laptop into the hold of an aircraft.
+- Keep food and drink away from it.
+- Do not attach stickers that cannot be removed cleanly.
+- Do not open, modify or repair it yourself.
+- Do not lend it to anyone, including family members (POL-006 section 5).
+
+Accidental damage is repaired or replaced at Fernhill's cost. You are not charged for accidental damage or for theft that you reported promptly. Repeated loss or damage caused by carelessness is a performance matter.
+
+If equipment is faulty, raise a ticket in the IT portal under "Equipment Fault". IT aims to repair or replace a faulty laptop within 3 business days and will lend you a temporary laptop where possible.
+
+
+6. PERSONAL DEVICES
+
+6.1 Personal phones
+
+You may use a personal phone for the authenticator app, company email and company chat, provided the phone is enrolled in mobile device management. Enrollment lets IT remove company data from the phone if it is lost. IT cannot see your personal photos, messages or apps.
+
+6.2 Phone allowance
+
+Fernhill does not provide company phones except to on-call staff in Customer Success and IT Security. There is no general phone allowance. On-call staff receive a company phone or an allowance of USD 40 per month, at their choice.
+
+6.3 Personal computers
+
+Personal laptops, desktops and tablets may not be used for Fernhill work at all. Do not sign in to Fernhill systems from a personal computer, a shared computer or a public computer.
+
+
+7. TAKING EQUIPMENT TO ANOTHER LOCATION
+
+7.1 Within your country of employment
+
+You may take your company laptop anywhere within your country of employment. Monitors and other accessories should stay at your home workspace.
+
+7.2 To another country
+
+You may take your company laptop to another country only if both of the following are true:
+
+- You have approval to work from that country under the Working From Another Location Policy (POL-005), or you are on approved business travel.
+- The country is not on the Restricted Locations List (POL-006 section 7).
+
+Carry the laptop in your hand luggage. Customs officers in some countries may ask to inspect electronic devices. If you are asked to unlock your laptop by a border official, comply, and then report it to IT Security as an incident on the same day.
+
+Do not take monitors, docking stations or other accessories abroad. Fernhill does not ship equipment to a temporary location in another country.
+
+7.3 Personal travel
+
+If you are traveling for a vacation and will not be working, leave your company laptop at home. Never take a company laptop to a country on the Restricted Locations List.
+
+7.4 Loss or theft while away
+
+A lost or stolen device must be reported to IT Security within 1 hour of noticing it (POL-006 section 8.2), wherever you are. IT locks the device remotely. If a laptop is lost abroad, IT cannot ship a replacement to another country. You will receive a replacement when you return to your country of employment, and the days you cannot work are taken as PTO or unpaid leave unless your manager agrees otherwise.
+
+
+8. RETURNING EQUIPMENT
+
+8.1 When employment ends
+
+All company equipment must be returned within 10 business days of your last day. IT sends a prepaid shipping box to hybrid and fully remote employees. Office-based employees return equipment to the office on their last day.
+
+8.2 What must be returned
+
+Return the laptop, charger, privacy screen, monitor, docking station and any non-standard equipment. Headsets, keyboards and mice do not need to be returned. Items bought with the home office stipend belong to you and are not returned.
+
+8.3 Equipment not returned
+
+If equipment is not returned within 10 business days, People Operations contacts you. If it is still not returned after 30 calendar days, Fernhill may recover the current value of the equipment where local law allows.
+
+8.4 Long leave
+
+If you are on leave for more than 12 weeks, IT may ask you to return your laptop for the period of the leave so that it can be kept updated. See the Leave of Absence Policy (POL-010).
+
+
+9. SOFTWARE
+
+Only software from the company software catalog may be installed. Request other software through the IT portal under "Software Request". IT Security reviews each request, normally within 5 business days. Do not install personal software licenses on a company laptop.
+
+
+10. QUESTIONS
+
+Equipment questions go to IT Operations through the IT portal. Questions about the home office stipend go to Finance under the category "Expense Question" in the HR portal.

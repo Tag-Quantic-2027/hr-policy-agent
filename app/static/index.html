@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fernhill HR Assistant</title>
+<style>
+  :root {
+    --bg: #f6f5f1; --panel: #ffffff; --ink: #1d2327; --muted: #5d676e; --line: #dedbd2;
+    --accent: #0f6b5c; --accent-ink: #ffffff; --soft: #e6f1ee; --warn: #9a4a00; --warn-bg: #fdf0e0;
+    --bad: #a12a2a; --bad-bg: #fbe9e9; --code: #f0eee8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181a; --panel: #1d2326; --ink: #e8eaeb; --muted: #9aa5ab; --line: #333c41;
+      --accent: #4fbfa8; --accent-ink: #0c1f1b; --soft: #1f3530; --warn: #f0b060; --warn-bg: #3a2a12;
+      --bad: #f08a8a; --bad-bg: #3a1c1c; --code: #262d31;
+    }
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { height: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; display: flex; flex-direction: column; }
+  header { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; padding: 12px 20px; background: var(--panel); border-bottom: 1px solid var(--line); }
+  header h1 { font-size: 17px; margin: 0; font-weight: 650; }
+  header .note { color: var(--muted); font-size: 13px; }
+  header .signin { margin-left: auto; display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+  select, textarea, button { font: inherit; color: inherit; }
+  select { padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); max-width: 60vw; }
+  main { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+  #chat { display: flex; flex-direction: column; min-height: 0; border-right: 1px solid var(--line); }
+  #messages { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .msg { max-width: 46em; padding: 10px 14px; border-radius: 10px; overflow-wrap: anywhere; }
+  .msg.user { align-self: flex-end; background: var(--accent); color: var(--accent-ink); white-space: pre-wrap; }
+  .msg.bot { align-self: flex-start; background: var(--panel); border: 1px solid var(--line); cursor: pointer; }
+  .msg.bot.selected { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .msg.bot p { margin: 0 0 8px; } .msg.bot p:last-child { margin-bottom: 0; }
+  .msg.bot ul, .msg.bot ol { margin: 0 0 8px; padding-left: 22px; }
+  .msg.bot h3 { font-size: 15px; margin: 10px 0 4px; }
+  .cite { background: var(--soft); color: var(--accent); border-radius: 4px; padding: 0 4px; font-size: 13px; white-space: nowrap; }
+  code { background: var(--code); padding: 1px 4px; border-radius: 4px; font-size: 13px; }
+  details { margin-top: 10px; font-size: 13px; }
+  summary { cursor: pointer; color: var(--muted); }
+  .source { margin: 8px 0 0; padding: 8px 10px; background: var(--bg); border-radius: 6px; }
+  .source b { display: block; } .source span { color: var(--muted); }
+  .confirm { display: flex; gap: 8px; margin-top: 10px; }
+  .meta { color: var(--muted); font-size: 12px; margin-top: 8px; }
+  .thinking { color: var(--muted); font-style: italic; }
+  #examples { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 20px 12px; }
+  #examples button { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 5px 12px; font-size: 13px; cursor: pointer; text-align: left; }
+  #examples button:hover { border-color: var(--accent); }
+  form { display: flex; gap: 10px; padding: 12px 20px 16px; border-top: 1px solid var(--line); background: var(--panel); }
+  textarea { flex: 1; resize: none; height: 46px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); }
+  button.primary { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 8px; padding: 0 18px; min-height: 36px; font-weight: 600; cursor: pointer; }
+  button.plain { background: none; border: 1px solid var(--line); border-radius: 8px; padding: 0 14px; min-height: 36px; cursor: pointer; }
+  button:disabled { opacity: .5; cursor: default; }
+  #trace { overflow-y: auto; padding: 20px; min-height: 0; }
+  #trace h2 { font-size: 15px; margin: 0 0 4px; }
+  #trace .hint { color: var(--muted); font-size: 13px; margin: 0 0 16px; }
+  .step { border-left: 3px solid var(--accent); padding: 2px 0 2px 12px; margin-bottom: 16px; }
+  .step .head { font-weight: 600; font-size: 14px; }
+  .step .said { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .tool { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; margin-top: 8px; font-size: 13px; overflow-wrap: anywhere; }
+  .tool .name { font-family: ui-monospace, Menlo, monospace; font-size: 12.5px; }
+  .tool pre { margin: 6px 0 0; padding: 6px 8px; background: var(--code); border-radius: 6px; white-space: pre-wrap; font-size: 12px; }
+  .badge { display: inline-block; border-radius: 4px; padding: 0 6px; font-size: 11.5px; font-weight: 600; margin-left: 6px; background: var(--soft); color: var(--accent); }
+  .badge.warn { background: var(--warn-bg); color: var(--warn); } .badge.bad { background: var(--bad-bg); color: var(--bad); }
+  .summary { border-top: 1px solid var(--line); padding-top: 12px; font-size: 13px; color: var(--muted); }
+  .summary b { color: var(--ink); }
+  @media (max-width: 860px) {
+    main { grid-template-columns: 1fr; grid-template-rows: minmax(60vh, 1fr) auto; }
+    #chat { border-right: 0; border-bottom: 1px solid var(--line); }
+    header .signin { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Fernhill HR Assistant</h1>
+  <span class="note">Course project. Every person, policy and record is invented.</span>
+  <label class="signin">Signed in as <select id="who" aria-label="Signed-in employee"></select></label>
+</header>
+<main>
+  <section id="chat">
+    <div id="messages" aria-live="polite"></div>
+    <div id="examples"></div>
+    <form id="form">
+      <textarea id="input" placeholder="Ask about a policy, your time off, or a request" aria-label="Your message"></textarea>
+      <button class="primary" id="send">Send</button>
+    </form>
+  </section>
+  <aside id="trace">
+    <h2>How this answer was reached</h2>
+    <p class="hint">Ask a question to see each step the agent takes. Click any earlier answer to see its steps again.</p>
+    <div id="steps"></div>
+  </aside>
+</main>
+
+<script>
+// Your turn (student): add one example question of your own to this list.
+const EXAMPLES = [
+  "How much is the home office stipend?",
+  "Can I work from Portugal for six weeks starting April 5?",
+  "How much PTO do I have left?",
+  "Open a ticket for 3 days of PTO starting March 15, 2027",
+  "What is the PTO balance of E1000?",
+  "My mother is in hospital. Can I take time off at short notice?",
+];
+
+const $ = (id) => document.getElementById(id);
+let conversationId = "";
+let busy = false;
+
+// ---- turning text into safe HTML ------------------------------------------
+
+function escapeHtml(text) {
+  return text.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function inline(text) {
+  return escapeHtml(text)
+    .replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")
+    .replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/POL-\d{3}[ ,]+(?:sections?|§)\s*\d+(?:\.\d+)*/g, '<span class="cite">$&</span>');
+}
+
+// The model writes simple Markdown: paragraphs, bold, lists and short headings.
+function markdown(text) {
+  const out = [];
+  let list = null;
+  const close = () => { if (list) { out.push(`</${list}>`); list = null; } };
+  for (const line of text.split("\n")) {
+    const bullet = line.match(/^\s*[-*]\s+(.*)/), numbered = line.match(/^\s*\d+\.\s+(.*)/), heading = line.match(/^#+\s+(.*)/);
+    if (bullet || numbered) {
+      const kind = bullet ? "ul" : "ol";
+      if (list !== kind) { close(); out.push(`<${kind}>`); list = kind; }
+      out.push(`<li>${inline((bullet || numbered)[1])}</li>`);
+    } else if (heading) { close(); out.push(`<h3>${inline(heading[1])}</h3>`); }
+    else if (line.trim()) { close(); out.push(`<p>${inline(line)}</p>`); }
+    else close();
+  }
+  close();
+  return out.join("");
+}
+
+// ---- the chat ---------------------------------------------------------------
+
+function add(kind, html) {
+  const node = document.createElement("div");
+  node.className = `msg ${kind}`;
+  node.innerHTML = html;
+  $("messages").append(node);
+  $("messages").scrollTop = $("messages").scrollHeight;
+  return node;
+}
+
+function showAnswer(node, result) {
+  let html = markdown(result.answer);
+  if (result.sources.length) {
+    html += `<details><summary>Sources (${result.sources.length})</summary>` + result.sources.map((s) =>
+      `<div class="source"><b>${escapeHtml(s.citation)}: ${escapeHtml(s.section_title)}</b>` +
+      `<span>${escapeHtml(s.doc_title)} (${escapeHtml(s.source_file)})</span><br>${escapeHtml(s.snippet)}${s.snippet.length >= 400 ? "…" : ""}</div>`
+    ).join("") + "</details>";
+  }
+  if (result.awaiting_confirmation) {
+    html += `<div class="confirm"><button class="primary" data-reply="Yes, go ahead and create the ticket.">Yes, create it</button>` +
+            `<button class="plain" data-reply="No, do not create the ticket.">No, cancel</button></div>`;
+  }
+  const steps = result.trace.filter((s) => s.type === "model").length;
+  html += `<div class="meta">${steps} step${steps === 1 ? "" : "s"}, ${(result.latency_ms / 1000).toFixed(1)} s</div>`;
+  node.className = "msg bot";
+  node.innerHTML = html;
+  node.onclick = (event) => {
+    const reply = event.target.dataset.reply;
+    if (reply) { node.querySelector(".confirm").remove(); send(reply); }
+    else if (!event.target.closest("details")) select(node, result);
+  };
+  select(node, result);
+}
+
+function select(node, result) {
+  document.querySelectorAll(".msg.bot.selected").forEach((n) => n.classList.remove("selected"));
+  node.classList.add("selected");
+  showTrace(result);
+}
+
+// ---- the trace panel ----------------------------------------------------------
+
+function showTrace(result) {
+  const parts = [];
+  for (const step of result.trace) {
+    if (step.type === "model") {
+      const wants = step.asked_for.length ? `asked for ${step.asked_for.length} tool${step.asked_for.length > 1 ? "s" : ""}` : "wrote an answer";
+      parts.push(`<div class="step"><div class="head">Step ${step.step}: the model ${wants} <span class="badge">${step.duration_ms} ms</span></div>`);
+      if (step.said && step.asked_for.length) parts.push(`<div class="said">${escapeHtml(step.said.slice(0, 300))}</div>`);
+      for (const tool of result.trace.filter((t) => t.type === "tool" && t.step === step.step)) {
+        let badge = '<span class="badge">ok</span>';
+        if (tool.blocked_by_guard) badge = '<span class="badge bad">blocked by guard</span>';
+        else if (!tool.ok) badge = '<span class="badge warn">refused or failed</span>';
+        else if (tool.attempts > 1) badge = `<span class="badge warn">ok after ${tool.attempts} attempts</span>`;
+        parts.push(`<div class="tool"><span class="name">${escapeHtml(tool.server)}.${escapeHtml(tool.tool)}</span>${badge}` +
+          `<pre>${escapeHtml(JSON.stringify(tool.input))}</pre><div>${escapeHtml(tool.summary)}</div></div>`);
+      }
+      parts.push("</div>");
+    } else if (step.type === "guard") {
+      parts.push(`<div class="tool"><span class="badge warn">citation check</span> The draft answer cited ` +
+        `${escapeHtml(step.unsupported.join(", "))}, which no tool had returned. The model was asked to read it or remove it.</div>`);
+    } else if (step.type === "error") {
+      parts.push(`<div class="tool"><span class="badge bad">error</span> ${escapeHtml(step.error)}: ${escapeHtml(step.detail)}</div>`);
+    }
+  }
+  const unverified = result.unverified_citations.length
+    ? `<br><span class="badge bad">warning</span> cited but never returned by a tool: ${escapeHtml(result.unverified_citations.join(", "))}` : "";
+  parts.push(`<div class="summary"><b>Outcome:</b> ${escapeHtml(result.outcome)}<br>` +
+    `<b>Time:</b> ${result.latency_ms} ms. <b>Tokens:</b> ${result.input_tokens} in, ${result.output_tokens} out<br>` +
+    `<b>Tools used:</b> ${escapeHtml(result.tools_used.join(", ") || "none")}<br>` +
+    `<b>Citations checked against tool results:</b> ${escapeHtml(result.citations.join(", ") || "none")}${unverified}</div>`);
+  $("steps").innerHTML = parts.join("");
+  document.querySelector("#trace .hint").hidden = true;
+}
+
+// ---- sending a message ---------------------------------------------------------
+
+async function send(message) {
+  if (busy || !message.trim()) return;
+  busy = true;
+  $("send").disabled = true;
+  $("examples").hidden = true;
+  add("user", escapeHtml(message));
+  const waiting = add("bot thinking", "Working on it…");
+  try {
+    const response = await fetch("/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ employee_id: $("who").value, message, conversation_id: conversationId }),
+    });
+    const body = await response.json();
+    if (!response.ok) throw new Error(typeof body.detail === "string" ? body.detail : "The message could not be sent.");
+    conversationId = body.conversation_id;
+    showAnswer(waiting, body);
+  } catch (error) {
+    waiting.className = "msg bot";
+    waiting.textContent = `Sorry, that did not work: ${error.message}`;
+  }
+  busy = false;
+  $("send").disabled = false;
+  $("input").focus();
+}
+
+function reset() {
+  conversationId = "";
+  $("messages").innerHTML = "";
+  $("steps").innerHTML = "";
+  $("examples").hidden = false;
+  document.querySelector("#trace .hint").hidden = false;
+}
+
+$("form").onsubmit = (event) => { event.preventDefault(); const text = $("input").value; $("input").value = ""; send(text); };
+$("input").onkeydown = (event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); $("form").requestSubmit(); } };
+$("who").onchange = reset;  // a different person starts a fresh conversation
+
+for (const example of EXAMPLES) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.textContent = example;
+  button.onclick = () => send(example);
+  $("examples").append(button);
+}
+
+fetch("/api/employees").then((r) => r.json()).then((people) => {
+  for (const person of people) {
+    const option = document.createElement("option");
+    option.value = person.employee_id;
+    const kind = person.employment_type === "full_time" ? "" : `, ${person.employment_type.replace("_", " ")}`;
+    option.textContent = `${person.full_name} (${person.employee_id}): ${person.job_title}${kind}`;
+    $("who").append(option);
+  }
+  $("who").value = "E1008";
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+doc_id: POL-020
+title: Employee Data Privacy Policy
+owner: People Operations and Legal
+effective_date: 2026-10-01
+version: 2.0
+
+# Employee Data Privacy Policy
+
+Fernhill Technologies is a fictional company created for a course project. Every person, office and figure in this document is invented.
+
+## 1. Purpose and Scope
+
+This policy explains what personal information Fernhill Technologies holds about the people who work for it, why it holds it, who may see it, how long it is kept and what rights you have. It applies to full-time employees, part-time employees, interns, job applicants and former employees. It also applies to the personal information of independent contractors that Fernhill holds in order to manage their contract.
+
+The technical rules for protecting information are in the Information and Data Security Policy (POL-006). The rules on who may see an employee record are in the HR Case Management and Escalation Procedure (POL-013) section 7. This policy does not change those rules. It explains them from the point of view of the person the information is about.
+
+Privacy law differs between the United States, Canada and Portugal. Where local law gives you a greater right than this policy, local law applies.
+
+## 2. What Information Fernhill Holds
+
+### 2.1 Information you give us
+
+- Identity and contact details: name, address, personal email, personal phone number and date of birth.
+- Right to work documents (POL-011 section 4.2).
+- Bank details for payroll and tax identifiers.
+- Emergency contacts.
+- Benefit elections and the names of dependents you enroll.
+- Information you choose to give in a ticket, a survey or a conversation with the HR assistant.
+
+### 2.2 Information created during employment
+
+- Job title, department, job level, manager, assigned office, work arrangement and start date.
+- Pay, bonus and pay statements.
+- Time off balances, leave records and attendance on anchor days.
+- Goals, reviews, ratings and any performance improvement plan.
+- Training records.
+- Tickets and their history.
+- Records of equipment issued to you.
+
+### 2.3 Sensitive information
+
+Fernhill holds medical information only when you provide it for sick leave, medical leave, an accommodation request or a benefits claim. Fernhill does not ask about your health, religion, ethnicity, sexual orientation or political views, other than voluntary and anonymous diversity surveys and where the law requires a record.
+
+## 3. How Information Is Classified
+
+Employee personal information is Confidential data. Payroll, bank and medical information is Restricted data (POL-006 section 3.5). Restricted data may be accessed only from within the country of employment of the person accessing it (POL-006 section 3.4).
+
+## 4. Who May See Your Information
+
+### 4.1 You
+
+You may see your own employee profile, time off balances, benefits elections and tickets in the HR portal at any time (POL-013 section 7.1).
+
+### 4.2 Your manager
+
+Your manager may see your job title, department, employment classification, work arrangement, assigned office, start date, time off balances and time off requests. Your manager may not see your benefits elections, medical information, bank details or Workplace Concern tickets (POL-013 section 7.2). Your manager sees your pay only during the salary review (POL-014 section 11).
+
+### 4.3 People Operations, Payroll and IT
+
+Members of People Operations see the parts of your record they need for their role. Payroll specialists see pay and bank details. The case team sees medical information and Workplace Concern tickets. IT administrators can see account and device information but not the content of your HR record.
+
+### 4.4 Colleagues
+
+Colleagues can see your name, job title, department, office, work email and photo in the company directory. Nothing else is shared. A request by one employee for information about another is declined (POL-013 section 7.3).
+
+### 4.5 Outside Fernhill
+
+Fernhill shares personal information outside the company only with service providers that run payroll, benefits and the HR portal under contract, with authorities where the law requires it, and with others at your written request (section 7). Fernhill never sells personal information.
+
+## 5. Your Rights
+
+### 5.1 Access
+
+You may ask for a copy of the personal information Fernhill holds about you. Raise a ticket under "Policy Question" with the words "data access request" in the summary. People Operations replies within 30 calendar days. The copy does not include information about other people or confidential references.
+
+### 5.2 Correction
+
+You can change your address, personal contact details, emergency contacts and preferred name yourself in the HR portal. A change of legal name or tax identifier needs a supporting document and is made by People Operations within 5 business days. Bank details are changed only as described in POL-014 section 3.4.
+
+### 5.3 Deletion
+
+You may ask for information to be deleted when Fernhill no longer needs it. Information that Fernhill must keep by law, such as payroll records, cannot be deleted before the end of its retention period (section 6).
+
+### 5.4 Complaints
+
+If you believe your information has been misused, raise a ticket under "Workplace Concern" or contact the privacy lead at privacy@fernhill.example. You also have the right to complain to the data protection authority in your country.
+
+## 6. How Long Information Is Kept
+
+- Personnel file, including goals, reviews and ratings: 7 years after employment ends.
+- Payroll and tax records: 7 years after the end of the tax year.
+- Right to work documents: 3 years after employment ends.
+- Medical documents and accommodation records: 3 years after employment ends, or longer where a claim is open.
+- Workplace Concern case files: 7 years after the case is closed.
+- Records of unsuccessful job applicants: 12 months after the hiring decision, unless the applicant agrees to a longer period.
+- Tickets other than Workplace Concern: 3 years after the ticket is closed.
+- Conversations with the HR assistant: 90 calendar days. A ticket created from a conversation is kept as a ticket.
+- Building access logs and security camera recordings: 90 calendar days.
+
+At the end of the period, information is deleted or made anonymous.
+
+## 7. Proof of Employment and Requests From Third Parties
+
+### 7.1 Letters you request
+
+You may request a proof of employment letter by raising a ticket under "Policy Question". The standard letter states your dates of employment, job title and whether you are full-time or part-time. People Operations issues it within 3 business days. Pay is included only if you ask for it in the ticket.
+
+### 7.2 Requests from lenders, landlords and other third parties
+
+If a lender, landlord or other third party contacts Fernhill directly, People Operations confirms nothing until it has your written consent. Managers and colleagues must not answer such requests and should pass them to People Operations.
+
+### 7.3 Requests from authorities and lawyers
+
+Requests from courts, regulators, police, tax authorities or lawyers are passed to Legal on the same day. Do not reply yourself. The HR assistant does not handle these requests (POL-013 section 5.2).
+
+## 8. Monitoring
+
+### 8.1 What Fernhill monitors
+
+For security, Fernhill records sign-ins to company systems, the location a connection comes from, VPN use, building access and the security status of company devices. This is how access from a country on the Restricted Locations List is detected and blocked (POL-006 section 7).
+
+### 8.2 What Fernhill does not monitor
+
+Fernhill does not record keystrokes, does not take screenshots of your screen, does not use your webcam or microphone, and does not track the location of your personal phone. On a personal phone enrolled in mobile device management, IT cannot see your personal photos, messages or apps (POL-008 section 6.1).
+
+### 8.3 Access to mailboxes and files
+
+Work email, chat and files belong to Fernhill. They are not read routinely. They may be accessed without your consent only for a security investigation, a legal obligation or a Workplace Concern investigation, and only with the written approval of the Chief People Officer and Legal.
+
+## 9. The HR Assistant and Your Data
+
+- The HR assistant reads only the published policies and the record of the employee who is signed in (POL-006 section 9).
+- A manager who is signed in can also ask about the limited fields in section 4.2 for their own direct reports.
+- It does not have access to pay, bank details, medical information, ratings or Workplace Concern tickets.
+- It will not look up another person's record for someone who is not entitled to see it, whatever reason is given (POL-013 section 7.4).
+- Each answer shows which tools were used and which records were read, so that you can see what happened.
+- Conversations are kept for 90 calendar days and are used to check the quality of answers. They are not used to assess your performance.
+- Do not type medical details, bank account numbers or passwords into the HR assistant.
+
+## 10. Photos, Recordings and Surveys
+
+Your directory photo is optional. Fernhill asks for your consent before using your photo or name in external marketing, and you may say no. Meetings are recorded only when everyone present has been told. Engagement surveys are anonymous, and results are reported only for groups of 5 or more people.
+
+## 11. Emergency Contacts
+
+Emergency contacts are used only in a real emergency involving you. Tell the people you list that you have given Fernhill their details.
+
+## 12. Transfers Between Countries
+
+Fernhill's HR systems are hosted in the United States and the European Union. Personal information about employees in Canada and Portugal is transferred under the contractual safeguards required by law. Your record moves with you if your country of employment changes (POL-022).
+
+## 13. Personal Data Breaches
+
+If you believe personal information has been lost, sent to the wrong person or seen by someone who should not see it, report it immediately as a security incident (POL-006 section 8). Fernhill tells the people affected and the authorities where the law requires it, within 72 hours of confirming a breach that puts people at risk.
+
+## 14. Your Responsibilities
+
+If your role gives you access to other people's personal information, use it only for your role, never look up a record out of curiosity, and never share it outside the group that needs it. Looking up a colleague's record without a business reason is a breach of POL-006 and of this policy.
+
+## 15. Questions
+
+Questions about this policy may be raised as a ticket under "Policy Question" or sent to privacy@fernhill.example. See POL-013 for response times.

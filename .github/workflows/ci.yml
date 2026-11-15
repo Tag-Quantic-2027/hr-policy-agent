@@ -1,0 +1,45 @@
+# Continuous integration: every push and every pull request is checked by GitHub
+# on a clean machine. Nothing here needs the API key, because the agent tests use
+# a scripted model.
+#
+# Deployment is tied to this: render.yaml tells Render to deploy only after these
+# checks pass (autoDeployTrigger: checksPass). A failing test means no deployment.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements*.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Import check (the app builds with no API key set)
+        run: python -c "import app.main"
+
+      - name: Start check (run the real server and call it over the network)
+        run: |
+          uvicorn app.main:app --port 8000 &
+          python -m scripts.check_deployment http://localhost:8000
+
+      - name: MCP discovery check (list the tools on both MCP servers)
+        run: python -m scripts.mcp_demo
+
+      # ---- Your turn (student) ----------------------------------------------
+      # Add the step that runs the test suite. See the Phase 7 instructions.

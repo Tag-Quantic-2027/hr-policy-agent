@@ -1,0 +1,22 @@
+# Secrets: never commit
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Built artifacts (rebuilt from corpus/ by the ingestion script)
+.chroma/
+.model_cache/
+*.db
+
+# Course materials (Quantic copyright, not ours to publish)
+/*.pdf
+
+# macOS and tools
+.DS_Store
+.claude/

@@ -1,0 +1,143 @@
+DOC_ID: POL-023
+TITLE: Recognition and Service Awards Policy
+OWNER: People Operations
+EFFECTIVE_DATE: 2026-04-01
+VERSION: 1.3
+
+RECOGNITION AND SERVICE AWARDS POLICY
+
+Fernhill Technologies is a fictional company created for a course project. Every person, office and figure in this document is invented.
+
+
+1. PURPOSE AND SCOPE
+
+This policy describes how Fernhill Technologies recognizes good work and long service: Kudos between colleagues, spot awards from managers, service awards, service leave and the annual Values Awards. It applies to full-time employees, part-time employees and interns, with the limits stated in each section. Independent contractors may be thanked with Kudos but may not receive any award with a cash value.
+
+Recognition under this policy is separate from pay. It is not part of the salary review or the annual bonus (POL-014), and it is not a gift from a customer or supplier (POL-012 section 7).
+
+
+2. KUDOS
+
+2.1 What Kudos is
+
+Kudos is a public thank you sent in the company chat tool. Anyone may send Kudos to anyone, including interns and contractors. Kudos has no cash value.
+
+2.2 Good Kudos
+
+Say what the person did and why it mattered. Link the message to one of the Fernhill values. Do not include Confidential or Restricted information, such as customer names in a public channel.
+
+2.3 Kudos and reviews
+
+Kudos received during the year may be mentioned in a self-assessment (POL-015 section 2). The number of Kudos received is not a measure of performance and must not be used as one.
+
+
+3. SPOT AWARDS
+
+3.1 What a spot award is
+
+A spot award is a one-off payment for a specific contribution that went well beyond what the role requires.
+
+3.2 Amounts and approval
+
+Award of USD 50 to USD 250: approved by the manager.
+Award of more than USD 250 and up to USD 500: approved by the manager and the department director.
+
+No single spot award may be more than USD 500. No employee may receive more than USD 1,000 in spot awards in a calendar year. Amounts for employees in Canada and Portugal are paid in local currency at the equivalent value.
+
+3.3 Who may receive a spot award
+
+Full-time employees, part-time employees and interns may receive a spot award. An employee on a performance improvement plan may still receive one. Directors and above may not receive spot awards. A manager may not give a spot award to a family member or partner, or to themselves.
+
+3.4 How it is paid
+
+The manager submits the award in the HR portal with a short reason. It is paid through payroll with the next pay date and is taxable. Spot awards are never paid in cash, in gift cards or through the expense tool.
+
+3.5 Budget
+
+Each department has a spot award budget for the year, set at USD 150 for each employee in the department. The department director may refuse an award when the budget has been used.
+
+
+4. SERVICE AWARDS
+
+4.1 Milestones
+
+Service is counted from your service date, which is your original start date unless you were rehired more than 12 months after leaving (POL-021 section 9).
+
+1 year of service: a thank you from the Chief Executive Officer. No payment.
+3 years of service: USD 150.
+5 years of service: USD 500 and 1 day of service leave.
+10 years of service: USD 1,000 and 5 days of service leave.
+15 years of service: USD 1,500 and 5 days of service leave.
+
+4.2 Who receives a service award
+
+Full-time and part-time employees receive service awards. Payments are the same for full-time and part-time employees and are not prorated. Time spent as an intern counts toward service if the intern became an employee without a break. Time spent as a contractor does not count.
+
+4.3 How it is paid
+
+A service award is paid through payroll with the first pay date after the anniversary and is taxable. You do not need to request it.
+
+4.4 Leave and service
+
+Periods of paid leave count toward service. Unpaid personal leave of more than 4 weeks does not count, and moves the anniversary date later by the length of the leave beyond 4 weeks.
+
+
+5. SERVICE LEAVE
+
+5.1 What it is
+
+Service leave is extra paid time off given at the 5, 10 and 15 year milestones. It is separate from paid time off under POL-002. It does not appear in your PTO balance and does not count toward the PTO carryover limit.
+
+5.2 Rules
+
+- Take service leave within 12 months of the anniversary. Service leave not taken within 12 months is lost.
+- Request it from your manager with the same notice that POL-002 section 3.2 requires for PTO of the same length.
+- Service leave may be added to PTO. If the combined absence is more than 5 consecutive working days, the approval of the department director is needed, as for PTO.
+- Service leave is not paid out when employment ends.
+- Service leave days do not count toward the Work From Anywhere limit, because they are not working days (POL-005 section 9).
+
+
+6. TEAM CELEBRATIONS
+
+A team may celebrate a milestone or a completed project as one of its team events. The limits in POL-007 section 5.2 apply: USD 60 per person per event, manager approval in advance, and a budget of 4 events per year for each team. Team celebrations are not an extra budget.
+
+Collections among colleagues for a birthday, a new baby or a leaving gift are voluntary. No one should be asked to contribute a fixed amount, and no list of who contributed should be kept. Fernhill sends flowers or a card, to a value of up to USD 75, for a birth or adoption, a serious illness or a bereavement. The manager orders this through the office manager and it is not claimed as an expense by the employee.
+
+
+7. VALUES AWARDS
+
+7.1 The awards
+
+Once a year, in December, Fernhill gives one Values Award for each of its four values, and one award for the team of the year.
+
+7.2 Nominations
+
+Anyone may nominate a colleague or a team between October 1 and October 31. You may not nominate yourself. A panel of employees from all three offices, chaired by the Chief People Officer, chooses the winners. Panel members may not be nominated in the year they serve.
+
+7.3 Prize
+
+Each individual winner receives USD 1,000 through payroll. The team of the year receives an additional team event with a limit of USD 120 per person. A Values Award does not count toward the yearly limit on spot awards in section 3.2.
+
+7.4 Who is eligible
+
+Full-time employees, part-time employees and interns are eligible. Directors and above are not eligible for individual awards.
+
+
+8. LEAVING GIFTS AND RETIREMENT
+
+When an employee with 5 or more years of service leaves in good standing, the department may spend up to USD 200 on a leaving gift, approved by the department director. For a retirement after 10 or more years of service, the limit is USD 500.
+
+
+9. TAX
+
+Cash awards under this policy are pay and are taxed through payroll. Fernhill does not increase an award to cover the tax. Questions about the tax on an award go to Payroll under the ticket category "Payroll Question".
+
+
+10. WHAT THE HR ASSISTANT CAN AND CANNOT DO
+
+The HR assistant can explain these rules and tell you your service date from your own record. It cannot submit or approve an award, and it cannot tell you what awards another person has received.
+
+
+11. QUESTIONS
+
+Raise a ticket in the HR portal under "Policy Question". See POL-013 for response times.

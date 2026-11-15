@@ -1,0 +1,5 @@
+# Test-only dependencies (used locally and in CI, not needed on Render).
+-r requirements.txt
+pytest==9.2.0
+pytest-asyncio==1.4.1.post1
+fpdf2==2.9.0

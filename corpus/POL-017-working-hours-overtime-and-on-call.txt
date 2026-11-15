@@ -1,0 +1,176 @@
+DOC_ID: POL-017
+TITLE: Working Hours, Overtime and On-Call Policy
+OWNER: People Operations
+EFFECTIVE_DATE: 2026-09-01
+VERSION: 2.0
+
+WORKING HOURS, OVERTIME AND ON-CALL POLICY
+
+Fernhill Technologies is a fictional company created for a course project. Every person, office and figure in this document is invented.
+
+
+1. PURPOSE AND SCOPE
+
+This policy explains how working time is organized at Fernhill Technologies: standard and core hours, flexible schedules, the compressed work week, breaks, time outside working hours, overtime and on-call duty. It applies to full-time employees, part-time employees and interns. Independent contractors set their own hours under their contract.
+
+The basic rules on standard hours and core hours are stated in the Employee Handbook (POL-001) section 5. This policy adds the detail. Where local law gives an employee a greater protection than this policy, local law applies.
+
+
+2. STANDARD HOURS AND CORE HOURS
+
+2.1 Standard hours
+
+The standard working week for a full-time employee is 40 hours, Monday to Friday. A part-time employee works the scheduled hours per week recorded in their employee profile.
+
+2.2 Core hours
+
+Every employee is expected to be available during core hours of 10:00 to 15:00 in the time zone of their assigned office, unless their manager has agreed a different arrangement in writing (POL-001 section 5.2). Core hours still apply, in the time zone of your assigned office, when you are working from another location under POL-005.
+
+2.3 Meetings
+
+Recurring team meetings should be scheduled inside core hours. A meeting that includes people from more than one office should be scheduled in the overlap of their core hours where one exists. Between Denver and Lisbon there is no overlap of core hours, so meetings between those offices rotate between early and late times so that the same people are not always inconvenienced.
+
+
+3. FLEXIBLE SCHEDULES
+
+3.1 Flexible start and finish
+
+Outside core hours, you may agree your start and finish times with your manager. No formal request is needed. The agreement can be informal, as long as your team knows when you are working.
+
+3.2 Regular changes to your pattern
+
+A lasting change to your working pattern, such as finishing at 15:00 every day to collect children and working again in the evening, needs your manager's agreement in writing. Managers should agree to a reasonable request unless there is a clear business reason not to, and must reply within 10 business days.
+
+3.3 Changes to scheduled hours
+
+A change in your total scheduled hours per week, for example from 40 hours to 32 hours, is a change of contract. It needs approval from your manager and your department director and is recorded by People Operations. Pay, paid time off and benefits are reassessed from the date of the change (POL-009 section 10.3).
+
+
+4. BREAKS AND REST
+
+4.1 Breaks
+
+Take a break of at least 30 minutes if you work more than 5 hours in a day. Breaks are unpaid unless local law says otherwise.
+
+4.2 Daily and weekly rest
+
+You should have at least 11 consecutive hours of rest in each 24 hour period and at least one full day of rest in each week. Managers must not plan work in a way that prevents this.
+
+4.3 Time outside working hours
+
+You are not expected to read or reply to messages outside your agreed working hours. This does not apply when you are on call (section 7) or in a real emergency. Managers should not send messages that appear to need an immediate reply outside working hours. Scheduling a message for the next morning is preferred.
+
+
+5. COMPRESSED WORK WEEK
+
+5.1 What it is
+
+A compressed work week means working your full weekly hours over fewer days. The only pattern offered is four days of 10 hours for a full-time employee.
+
+5.2 Eligibility
+
+You may request a compressed work week if all of the following are true:
+
+- You are a full-time employee.
+- You have completed the probationary period.
+- You are not on a performance improvement plan (POL-015 section 6.3).
+- You are not part of an on-call rota (section 7).
+- Your manager confirms that the team can be covered on your non-working day.
+
+5.3 Approval and trial
+
+A compressed work week needs approval from your manager and your department director. It begins with a trial of 3 months. At the end of the trial, the manager either confirms the arrangement or ends it, with reasons. Fernhill may end a confirmed arrangement with 30 calendar days of written notice if business needs change.
+
+5.4 Effect on time off
+
+While you work a compressed week, one day of paid time off, sick leave or other leave is recorded as 1.25 days, because each working day is 10 hours long. A company holiday that falls on your non-working day is not replaced with another day off. Hybrid employees on a compressed week must still attend both anchor days (POL-004 section 3), so the non-working day must be a Monday, a Wednesday or a Friday.
+
+
+6. OVERTIME
+
+6.1 Who is eligible
+
+Whether you are eligible for overtime pay depends on your role and on the law of your country of employment, and in the United States and Canada on your state or province. Your offer letter states whether your role is eligible. If you are not sure, ask People Operations.
+
+6.2 Approval in advance
+
+Overtime must be approved by your manager before it is worked (POL-001 section 5.3). Unapproved overtime is still paid where the law requires, but working overtime without approval more than once is a performance matter.
+
+6.3 Recording
+
+Employees who are eligible for overtime record their hours in the time tool by the end of each week. Managers approve recorded hours by the following Tuesday.
+
+6.4 Limits
+
+No employee should work more than 48 hours in a week, including overtime, other than in a real emergency. A manager who needs a team to work beyond this limit must have the approval of the department director.
+
+6.5 Payment
+
+Approved overtime is paid as described in POL-014 section 7. Overtime rates follow local law.
+
+6.6 Employees not eligible for overtime pay
+
+Employees whose roles are not eligible for overtime pay are not paid extra for additional hours. If an employee in such a role is asked to work on a weekend or a company holiday, the manager gives equal time off within 30 calendar days. For work on a company holiday, see also POL-003 section 8.
+
+6.7 What the HR assistant does
+
+The HR assistant does not calculate overtime pay and does not decide whether a role is eligible for overtime. It can explain this section and prepare a draft ticket under "Payroll Question" for you to confirm.
+
+
+7. ON-CALL DUTY
+
+7.1 Which teams
+
+On-call duty applies only to named roles in Customer Success and IT Security. These are the same roles that receive a company phone or a phone allowance under POL-008 section 6.2.
+
+7.2 The rota
+
+- An on-call period lasts 7 calendar days, from Monday at 09:00 to the following Monday at 09:00.
+- No one is on call for more than 1 week in every 4.
+- The rota is published at least 4 weeks in advance.
+- You may swap an on-call week with a colleague, with your manager's agreement.
+
+7.3 What on call means
+
+While on call, you must be reachable on your on-call phone, able to start work within 30 minutes of being called, and in a place where you can connect to the VPN on your company laptop. You may not be on call from a country other than your country of employment. For this reason, on-call weeks cannot be combined with international remote work under POL-005.
+
+7.4 On-call allowance
+
+Each on-call week is paid an allowance of USD 200, or the equivalent in local currency, whether or not you are called. The allowance is paid as described in POL-014 section 7.
+
+7.5 Time worked when called
+
+Time actually worked on a call-out outside your normal hours is repaid as time off in lieu, hour for hour, with a minimum of 1 hour per call-out. Take time off in lieu within 30 calendar days. Employees eligible for overtime pay are paid overtime for call-out time and do not also receive time off in lieu.
+
+7.6 Rest after a call-out
+
+If a call-out keeps you working after midnight, start work late the next day so that you have 11 hours of rest. You do not need to make up the time.
+
+7.7 On call and time off
+
+Do not schedule PTO during a week when you are on call. Arrange a swap first. If you fall ill while on call, tell the on-call manager immediately so that cover can be arranged.
+
+
+8. TIME OFF IN LIEU
+
+Time off in lieu is recorded in the HR portal by your manager. It is separate from paid time off. It does not appear in your PTO balance, it does not carry over beyond 30 calendar days, and it is not paid out when employment ends unless local law requires it.
+
+
+9. TRAVEL TIME
+
+Travel on a normal working day counts as working time. If business travel requires you to travel on a weekend or a company holiday for more than 4 hours, your manager gives equal time off within 30 calendar days. Commuting between your home and your assigned office is not working time (POL-004 section 7.3).
+
+
+10. PART-TIME EMPLOYEES
+
+A part-time employee may be asked to work extra hours occasionally and may decline. Extra hours are paid at the normal hourly rate up to 40 hours in a week, and overtime rules apply beyond that where the role is eligible. If a part-time employee regularly works more than their scheduled hours for 3 months, the manager must review the scheduled hours with People Operations.
+
+
+11. INTERNS
+
+Interns work the hours stated in their internship agreement, to a maximum of 40 hours per week. Interns do not work overtime and are never on call.
+
+
+12. QUESTIONS
+
+Questions about how this policy works may be raised as a ticket under "Policy Question". Questions about overtime pay go under "Payroll Question". See POL-013 for response times.

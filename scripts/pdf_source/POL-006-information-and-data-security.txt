@@ -1,0 +1,152 @@
+doc_id: POL-006
+title: Information and Data Security Policy
+owner: IT Security
+effective_date: 2026-10-01
+version: 4.0
+
+# Information and Data Security Policy
+
+Fernhill Technologies is a fictional company created for a course project. Every person, office and figure in this document is invented.
+
+## 1. Purpose and Scope
+
+This policy sets the minimum rules for protecting Fernhill Technologies information and the information our customers trust us with. It applies to everyone who has access to Fernhill systems: full-time employees, part-time employees, interns and independent contractors.
+
+The policy is owned by IT Security. People Operations refers to it in several HR policies, in particular the Remote and Hybrid Work Policy (POL-004), the Working From Another Location Policy (POL-005) and the Equipment and IT Asset Policy (POL-008).
+
+## 2. Your Responsibilities
+
+Everyone with access to Fernhill systems must:
+
+- Complete Security Awareness training within 5 business days of starting, and once a year after that.
+- Use company systems only for authorized purposes.
+- Protect their login details and never share them with anyone, including colleagues and IT staff.
+- Report any suspected security incident immediately, as described in section 8.
+- Follow the rules for their data access level, as described in section 3.
+
+## 3. Data Classification and Access Levels
+
+### 3.1 The four classes of data
+
+All Fernhill information belongs to one of four classes:
+
+- Public: information approved for release outside the company, such as published marketing material.
+- Internal: everyday business information that is not for release outside the company, such as team plans, internal announcements and this policy.
+- Confidential: information that could harm Fernhill or its customers if disclosed, such as source code, customer data, contracts and unreleased financial results.
+- Restricted: the most sensitive information, where disclosure could cause serious legal or financial harm. Restricted data includes payroll records, bank details, employee medical information, security credentials and encryption keys.
+
+### 3.2 Data access levels
+
+Each person has a data access level recorded in their employee profile: Internal, Confidential or Restricted. The level is the highest class of data the person may access in their role. Access is granted on the principle of least privilege: you receive only the access you need to do your job.
+
+### 3.3 Handling Confidential data
+
+Confidential data must be stored only in approved company systems. It must not be copied to personal devices, personal email or personal cloud storage. It may be accessed from outside your country of employment only over the company VPN and only on a company laptop.
+
+### 3.4 Handling Restricted data
+
+Restricted data may be accessed only on a company laptop, only over the company VPN, and only from within your country of employment. Restricted data must never be accessed from another country, for any reason and for any length of time. This is why employees with a Restricted data access level are not permitted to perform international remote work under POL-005 section 6.
+
+Restricted data must not be printed outside a Fernhill office and must not be discussed in public places.
+
+### 3.5 Employee records
+
+Employee personal information is Confidential. Payroll, bank and medical information is Restricted. An employee may see their own record. A manager may see limited information about their direct reports: job details, work arrangement, office, start date and time off balances. A manager may not see a direct report's benefits elections, medical information or bank details. The HR assistant applies the same rules.
+
+## 4. Accounts and Authentication
+
+### 4.1 Passwords
+
+Passwords must be at least 14 characters long and must be unique to Fernhill. Use the company password manager. Do not reuse a password from any personal account.
+
+### 4.2 Multi-factor authentication
+
+Multi-factor authentication (MFA) is required for every Fernhill system. Use the approved authenticator app. Never approve an MFA prompt that you did not start yourself. An unexpected MFA prompt is a security incident and must be reported.
+
+### 4.3 Leaving your device
+
+Lock your screen whenever you leave your device, even for a moment. Devices lock automatically after 5 minutes without use.
+
+## 5. Company Devices
+
+Work must be done on a company laptop. Company laptops are encrypted, managed by IT and updated automatically. You must not disable security software, install unapproved software or let anyone else use your company laptop, including family members.
+
+Personal phones may be used only for the authenticator app, company email and company chat, and only if the phone is enrolled in mobile device management. Personal laptops and tablets may not be used for work at all. See POL-008 section 6 for details.
+
+Install updates within 3 calendar days of being prompted.
+
+## 6. Working Outside the Office
+
+### 6.1 The VPN
+
+When you work anywhere other than a Fernhill office, you must connect to the company VPN before accessing any Fernhill system. This applies at home, in another state or province, and in another country. The VPN must stay connected for the whole working session.
+
+### 6.2 Public networks
+
+Avoid public wireless networks, such as those in cafes, hotels and airports. If you must use one, the VPN must be connected before you do anything else. Never access Restricted data on a public network. A personal mobile hotspot is preferred over a public network.
+
+### 6.3 Privacy in public places
+
+Do not work on Confidential data where your screen can be seen by others. Use the privacy screen supplied with your laptop when working in shared spaces. Do not take confidential calls where you can be overheard.
+
+### 6.4 Working from another country
+
+Before working from another country, check all of the following:
+
+- The country is not on the Restricted Locations List in section 7.
+- Your data access level permits international work (see section 3 and POL-005 section 6).
+- You have the approvals required by POL-005 section 5.
+
+While abroad, use only your company laptop, keep the VPN connected, and do not connect your laptop to shared or public computers, printers or storage devices. Do not leave your laptop unattended in a hotel room unless it is locked in a safe.
+
+## 7. Restricted Locations List
+
+Fernhill systems may not be accessed from the following countries and regions, because of export control law, sanctions or an unacceptable level of security risk:
+
+- Belarus
+- Cuba
+- Iran
+- North Korea
+- Russia
+- Syria
+- Venezuela
+
+Access attempts from these locations are blocked automatically and reported to IT Security. Do not take a company laptop to these locations, even for personal travel. If you are traveling to one of these locations on vacation, leave your company laptop at home or with your manager.
+
+There are no exceptions to the Restricted Locations List. The list is reviewed every quarter by IT Security and Legal. The current list is the one published in this policy.
+
+## 8. Reporting Security Incidents
+
+### 8.1 What to report
+
+Report any of the following immediately:
+
+- A lost or stolen company device, or a lost or stolen personal phone that is enrolled in mobile device management.
+- A suspicious email, message or call, especially one asking for login details or payment.
+- An MFA prompt that you did not start.
+- Confidential or Restricted data sent to the wrong person.
+- Any sign that someone else has used your account.
+
+### 8.2 How quickly to report
+
+A lost or stolen device must be reported within 1 hour of noticing it. All other incidents must be reported as soon as possible and always on the same day.
+
+### 8.3 How to report
+
+Call the IT Security hotline, which is staffed 24 hours a day, or email security@fernhill.example. The hotline number is on the back of your building pass and in the company chat tool. Do not wait for your manager's permission to report an incident. Reporting quickly is never penalized, even if the incident was caused by your own mistake.
+
+## 9. Use of AI Tools
+
+Only AI tools approved by IT Security may be used with Fernhill information. Do not paste Confidential or Restricted data into any AI tool that is not on the approved list. The HR assistant is an approved tool. It is designed to read only the published policies and the record of the employee who is signed in.
+
+## 10. Leaving Fernhill
+
+When your employment or contract ends, your access is removed on your last day. You must return all company equipment as described in POL-008 section 8. You must not keep any Fernhill information after you leave.
+
+## 11. Breaches of This Policy
+
+A breach of this policy may lead to removal of access and to disciplinary action, up to and including the end of employment or contract. Accessing Fernhill systems from a country on the Restricted Locations List, or accessing Restricted data from outside your country of employment, is always treated as a serious breach.
+
+## 12. Questions
+
+Questions about this policy go to IT Security at security@fernhill.example. Questions about how it affects a work arrangement or a Work From Anywhere request go to People Operations through the HR portal.

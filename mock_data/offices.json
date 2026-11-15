@@ -1,0 +1,8 @@
+{
+  "_meta": {"synthetic": true, "note": "Invented offices for a course project."},
+  "offices": [
+    {"office_id": "DEN", "city": "Denver", "country": "United States", "role": "Headquarters", "time_zone": "America/Denver", "anchor_days": ["Tuesday", "Thursday"], "holiday_calendar": "United States"},
+    {"office_id": "TOR", "city": "Toronto", "country": "Canada", "role": "Engineering and customer success hub", "time_zone": "America/Toronto", "anchor_days": ["Tuesday", "Thursday"], "holiday_calendar": "Canada"},
+    {"office_id": "LIS", "city": "Lisbon", "country": "Portugal", "role": "European hub", "time_zone": "Europe/Lisbon", "anchor_days": ["Tuesday", "Thursday"], "holiday_calendar": "Portugal"}
+  ]
+}
