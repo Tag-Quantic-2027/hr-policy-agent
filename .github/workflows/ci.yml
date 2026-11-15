@@ -18,10 +18,10 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Get the code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -43,3 +43,5 @@ jobs:
 
       # ---- Your turn (student) ----------------------------------------------
       # Add the step that runs the test suite. See the Phase 7 instructions.
+      - name: Run the tests
+        run: pytest -q
