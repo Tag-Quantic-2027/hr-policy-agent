@@ -270,3 +270,31 @@ async def test_a_ticket_is_created_after_the_employee_replies():
     assert created["ok"] is True and created["summary"] == "status: created"
     assert len(hr_data.created_tickets) == before + 1
     assert hr_data.created_tickets[-1]["employee_id"] == "E1008"
+
+
+async def test_a_ticket_made_in_one_conversation_is_not_seen_in_a_new_one():
+    """The fault found while recording the demo: a ticket left by an earlier chat
+    made the agent decline to open the same ticket again in a fresh chat."""
+
+    async def listed(app, conversation) -> list[str]:
+        """Ask for the ticket list through the agent and MCP, and return the ids the tool gave back."""
+        await run_turn(app, conversation, "What tickets do I have?", ScriptedModel(use("list_my_tickets"), say("Listed.")))
+        result = json.loads(conversation.messages[-2]["content"][0]["content"])
+        return [ticket["ticket_id"] for ticket in result["tickets"]]
+
+    first = Conversation("E1008", session_id="first-chat")
+    try:
+        async with running_app() as app:
+            await run_turn(app, first, "Open a PTO ticket", ScriptedModel(PROPOSE, say("Shall I create it?")))
+            token = json.loads(first.messages[2]["content"][0]["content"])["confirmation_token"]
+            await run_turn(
+                app, first, "Yes", ScriptedModel(use("create_mock_hr_ticket", confirmation_token=token), say("Done."))
+            )
+            new_id = hr_data.created_tickets[-1]["ticket_id"]
+
+            # The same conversation still sees it, so a duplicate is still caught there.
+            assert new_id in await listed(app, first)
+            # A new conversation (a reloaded page, another visitor) sees only the seed tickets.
+            assert new_id not in await listed(app, Conversation("E1008", session_id="second-chat"))
+    finally:
+        hr_data.clear_created_tickets("E1008")

@@ -47,6 +47,11 @@ def _requester(ctx: Context) -> str:
     return employee_id
 
 
+def _session(ctx: Context) -> str:
+    """Which conversation is calling. Set by our code in a header, like the employee id."""
+    return (ctx.headers or {}).get("x-session-id", "")
+
+
 def _run(function, *args) -> dict[str, Any]:
     """Call a function from hr_data or compliance, turning its errors into tool errors."""
     try:
@@ -185,7 +190,7 @@ def create_mock_hr_ticket(
     """
     requester = _requester(ctx)
     if confirmation_token:
-        return _run(hr_data.confirm_ticket, requester, confirmation_token)
+        return _run(hr_data.confirm_ticket, requester, confirmation_token, _session(ctx))
     return _run(hr_data.propose_ticket, requester, category, summary, priority)
 
 @server.tool()
@@ -199,4 +204,4 @@ def list_my_tickets(ctx: Context) -> dict[str, Any]:
     signed in, never anyone else's. It reads only and changes nothing.
     """
     requester = _requester(ctx)
-    return _run(hr_data.my_tickets, requester)
+    return _run(hr_data.my_tickets, requester, _session(ctx))

@@ -50,6 +50,7 @@ class Conversation:
     employee_id: str
     messages: list[dict] = field(default_factory=list)  # everything the model is shown, in order
     evidence: set[str] = field(default_factory=set)  # every citation a tool has returned so far
+    session_id: str = ""  # names this conversation to the HR server, which keeps mock tickets per conversation
 
 
 @dataclass
@@ -133,7 +134,7 @@ async def run_turn(app: FastAPI, conversation: Conversation, user_message: str, 
     citation_check_used = False
 
     try:
-        async with Toolbox(app, conversation.employee_id) as toolbox:
+        async with Toolbox(app, conversation.employee_id, conversation.session_id) as toolbox:
             system = system_prompt(conversation.employee_id, toolbox.server_instructions)
 
             for step in range(1, settings.agent_max_steps + 1):

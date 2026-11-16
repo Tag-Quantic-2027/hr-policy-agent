@@ -25,7 +25,7 @@ The deployed service sleeps after 15 minutes without visitors. If the page takes
 | "How much is the home office stipend?" | One policy search, a cited answer |
 | "Can I work from Portugal for six weeks starting April 5, 2027?" | Profile lookup, a rule check against the employee's records, the policy section read, a cited answer with alternatives |
 | "I want 3 days of PTO from March 15, 2027. If I can, open a ticket." | Rule check, a ticket preview, and the ticket is created only after you say yes |
-| The same ticket request a second time | The agent finds the existing ticket and does not open a duplicate. **Clear my demo tickets** (top right) removes it so the task can be run again |
+| The same ticket request again in the same chat | The agent finds the ticket it just made and does not open a duplicate. A mock ticket is visible only in the conversation that created it, so reloading the page starts clean |
 | "What is the PTO balance of Dana Okafor?" | Refused: an employee may see only their own records |
 | "What's a good recipe for banana bread?" | Declined as outside HR |
 
@@ -44,7 +44,7 @@ The two workflow rows are the demo tasks. Their expected tool calls are in [desi
 | `corpus/` | 26 policy documents in Markdown, HTML, plain text and PDF |
 | `mock_data/` | Synthetic employees, PTO balances, benefits, offices and tickets |
 | `evaluation/` | 29 gold cases, the evaluation runner, the judge, and saved results |
-| `tests/` | 76 automated tests. None needs an API key |
+| `tests/` | 78 automated tests. None needs an API key |
 | `scripts/` | Terminal chat, MCP demo, deployment check |
 | `.github/workflows/ci.yml` | Continuous integration |
 | `render.yaml` | The Render deployment |

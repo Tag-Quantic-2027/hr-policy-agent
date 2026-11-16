@@ -142,7 +142,9 @@ def create_app(llm=None) -> FastAPI:
             if len(state.conversations) >= MAX_CONVERSATIONS:
                 del state.conversations[next(iter(state.conversations))]
             conversation_id = uuid.uuid4().hex
-            conversation = state.conversations[conversation_id] = Conversation(body.employee_id)
+            conversation = state.conversations[conversation_id] = Conversation(
+                body.employee_id, session_id=conversation_id
+            )
 
         result = await run_turn(request.app, conversation, body.message.strip(), state.llm)
 

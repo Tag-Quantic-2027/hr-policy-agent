@@ -27,10 +27,17 @@ _LOCAL = "http://127.0.0.1:8000"  # only a label for in-memory requests: nothing
 
 
 @asynccontextmanager
-async def connect(app: FastAPI, server: str, employee_id: str = "") -> AsyncIterator[Client]:
+async def connect(
+    app: FastAPI, server: str, employee_id: str = "", session_id: str = ""
+) -> AsyncIterator[Client]:
     headers = {}
     if server == "hr":
-        headers = {"X-Internal-Token": settings.mcp_internal_token, "X-Employee-Id": employee_id}
+        headers = {
+            "X-Internal-Token": settings.mcp_internal_token,
+            "X-Employee-Id": employee_id,
+            # Which conversation this is. Mock tickets are kept per conversation.
+            "X-Session-Id": session_id,
+        }
 
     url = settings.mcp_policy_url if server == "policy" else settings.mcp_hr_url
     if url:

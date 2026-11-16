@@ -22,7 +22,8 @@ Quantic MSAIE project: an agentic HR assistant (policy RAG + MCP tools + deploym
 - MCP SDK is version 2 (`mcp==2.3.0`): the server class is `MCPServer` (not `FastMCP`) and the client is `mcp.Client`. Check the installed package before using older examples.
 - Identity: the signed-in employee reaches the HR server in an `X-Employee-Id` header set by our code, with an `X-Internal-Token` secret. The model never supplies who is asking. Access rules are in `mcp_servers/hr_data.py`.
 - Tickets are two-step: propose returns a token, confirm creates. Mock tickets live in memory only.
-- `POST /api/demo/reset` (the "Clear my demo tickets" button) removes the mock tickets one employee created, so the ticket task can be repeated. It is a page route, not an MCP tool, so the model cannot call it.
+- A mock ticket is visible only in the conversation that created it. The conversation id reaches the HR server in an `X-Session-Id` header set by our code, like the employee id. A new chat therefore sees only the seed tickets, so the ticket demo can always be repeated and visitors do not see each other's tickets.
+- `POST /api/demo/reset` (the "Clear my demo tickets" button) removes every mock ticket one employee created. It is a page route, not an MCP tool, so the model cannot call it.
 - Rule arithmetic (dates, balances, limits) is code in `mcp_servers/compliance.py`, not left to the model.
 - Agent: `run_turn()` in `app/agent/loop.py` runs one employee message. It discovers tools through `app/agent/toolbox.py` on every turn (no hard-coded tool list), keeps a trace, and returns a `TurnResult`. The system prompt is `app/agent/prompts.py`.
 - The model picks the tools. Code enforces: the step limit (`AGENT_MAX_STEPS`), one retry for a tool breakdown and none for a refusal, and that a ticket cannot be previewed and confirmed in the same turn.

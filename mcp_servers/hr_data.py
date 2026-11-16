@@ -248,12 +248,19 @@ PRIORITIES = ("P1", "P2", "P3")
 # Kept in memory only. Restarting the service clears them, and the seed file is never changed.
 _pending: dict[str, dict] = {}
 created_tickets: list[dict] = []
+# ticket id -> the conversation that created it. A mock ticket is shown only in
+# the conversation that made it, so a new conversation always starts with the
+# seed tickets alone. Otherwise a ticket from one visitor's (or one rehearsal's)
+# chat would still be there for the next, and the agent would decline to open it again.
+_ticket_session: dict[str, str] = {}
+MAX_CREATED_TICKETS = 500  # the oldest are dropped, so a public demo cannot fill memory
 
 
-def my_tickets(requester_id: str) -> dict:
-    """The signed-in employee's own tickets: the seed ones plus any created this session."""
+def my_tickets(requester_id: str, session_id: str = "") -> dict:
+    """The signed-in employee's own tickets: the seed ones plus any created in this conversation."""
     get_employee(requester_id)
-    tickets = [t for t in SEED_TICKETS + created_tickets if t["employee_id"] == requester_id]
+    created_here = [t for t in created_tickets if _ticket_session.get(t["ticket_id"], "") == session_id]
+    tickets = [t for t in SEED_TICKETS + created_here if t["employee_id"] == requester_id]
     return {"employee_id": requester_id, "ticket_count": len(tickets), "tickets": tickets}
 
 
@@ -300,13 +307,16 @@ def clear_created_tickets(requester_id: str) -> int:
     get_employee(requester_id)
     kept = [t for t in created_tickets if t["employee_id"] != requester_id]
     removed = len(created_tickets) - len(kept)
+    for ticket in created_tickets:
+        if ticket["employee_id"] == requester_id:
+            _ticket_session.pop(ticket["ticket_id"], None)
     created_tickets[:] = kept  # changed in place: other code holds a reference to this list
     for token in [k for k, preview in _pending.items() if preview["employee_id"] == requester_id]:
         del _pending[token]
     return removed
 
 
-def confirm_ticket(requester_id: str, token: str) -> dict:
+def confirm_ticket(requester_id: str, token: str, session_id: str = "") -> dict:
     """Step 2: create exactly the ticket that was proposed. A token works once."""
     preview = _pending.get(token)
     if preview is None or preview["employee_id"] != requester_id:
@@ -321,4 +331,8 @@ def confirm_ticket(requester_id: str, token: str) -> dict:
         "created_via_assistant": True,
     }
     created_tickets.append(ticket)
+    _ticket_session[ticket["ticket_id"]] = session_id
+    for old in created_tickets[:-MAX_CREATED_TICKETS]:
+        _ticket_session.pop(old["ticket_id"], None)
+    del created_tickets[:-MAX_CREATED_TICKETS]
     return {"status": "created", "ticket": ticket, "note": "Mock action: stored in memory only."}

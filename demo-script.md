@@ -107,7 +107,7 @@ Skip this section if you are running long.
 ### 7. CI/CD (7:15 to 7:45) — the Actions tab
 
 - Open the latest green run and show the steps.
-- **Say:** Every push and pull request runs these checks with no API key: an import check, a real server start, MCP tool discovery, and 76 tests. The agent tests use a scripted model.
+- **Say:** Every push and pull request runs these checks with no API key: an import check, a real server start, MCP tool discovery, and 78 tests. The agent tests use a scripted model.
 - **Say:** Render deploys only after these checks pass. That is the `checksPass` line in `render.yaml`.
 
 ### 8. Evaluation (7:45 to 9:00) — the report tab

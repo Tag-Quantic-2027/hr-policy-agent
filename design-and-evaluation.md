@@ -227,7 +227,7 @@ A citation counts as supported only if a tool returned that section. A section m
 - **`POST /chat`:** returns the answer, checked citations, source snippets, the trace, and whether a ticket preview is waiting for a yes or no.
 - **`GET /health`:** connects to both MCP servers and lists their tools, so it reports real MCP connectivity.
 - **Deployment:** one Render free web service, defined in `render.yaml`. No database: the policies and mock data are files in the repository, and the vector index is built during the Render build.
-- **CI/CD:** GitHub Actions on every push and pull request: install, import check, a real server start checked over the network, MCP tool discovery, and 76 tests, all without an API key. Render deploys only after the checks pass.
+- **CI/CD:** GitHub Actions on every push and pull request: install, import check, a real server start checked over the network, MCP tool discovery, and 78 tests, all without an API key. Render deploys only after the checks pass.
 
 Cold start and warm timings on Render are in [deployed.md](deployed.md).
 

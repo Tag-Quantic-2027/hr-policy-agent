@@ -38,9 +38,10 @@ class ToolOutcome:
 
 
 class Toolbox:
-    def __init__(self, app: FastAPI, employee_id: str) -> None:
+    def __init__(self, app: FastAPI, employee_id: str, session_id: str = "") -> None:
         self._app = app
         self._employee_id = employee_id
+        self._session_id = session_id
         self._stack = AsyncExitStack()
         self._clients: dict[str, Any] = {}
         self._owner: dict[str, str] = {}  # tool name -> server name
@@ -50,7 +51,9 @@ class Toolbox:
     async def __aenter__(self) -> "Toolbox":
         for server in SERVERS:
             # The employee id travels in a header on this connection. See app/mcp_client.py.
-            client = await self._stack.enter_async_context(connect(self._app, server, self._employee_id))
+            client = await self._stack.enter_async_context(
+                connect(self._app, server, self._employee_id, self._session_id)
+            )
             self._clients[server] = client
             self.server_instructions.append(client.instructions or "")
             for tool in (await client.list_tools()).tools:
