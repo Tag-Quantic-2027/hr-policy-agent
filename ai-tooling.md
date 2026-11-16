@@ -56,6 +56,7 @@ A file of standing instructions, `CLAUDE.md`, records the decisions made so far 
 - **Tuning on the test set.** The prompt was improved over three runs on the same 29 cases it is scored on (69%, 72%, 86%). There is no held-out set, so the final figure is optimistic. Claude Code pointed this out itself, after the fact.
 - **A judge that was too strict.** The judge model first marked statements about the assistant's own tools as unsupported claims. Its instructions were changed between runs, which also moved the groundedness figure.
 - **Things it could not do.** It could not create the GitHub repository settings, the Render service or the API key. It also nearly pushed to my other GitHub account, and my own first push failed for the same reason: two accounts on one machine.
+- **A demo problem it did not foresee.** A ticket I created while rehearsing was still in memory when I recorded, so the agent correctly refused to open a duplicate and my second demo task failed on camera. Claude Code had mentioned waiting for the service to sleep, but had not built a way to clear the ticket. It added a "Clear my demo tickets" button afterwards.
 - **Sandbox limits.** Its built-in preview could not start the app from my Documents folder, so it ran the server another way.
 
 ## What only a person could decide

@@ -79,6 +79,7 @@
   <h1>Fernhill HR Assistant</h1>
   <span class="note">Course project. Every person, policy and record is invented.</span>
   <label class="signin">Signed in as <select id="who" aria-label="Signed-in employee"></select></label>
+  <button class="plain" id="clear" type="button" title="Removes the mock tickets this employee created through the assistant, so a demo task can be run again">Clear my demo tickets</button>
 </header>
 <main>
   <section id="chat">
@@ -258,6 +259,27 @@ function reset() {
 $("form").onsubmit = (event) => { event.preventDefault(); const text = $("input").value; $("input").value = ""; send(text); };
 $("input").onkeydown = (event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); $("form").requestSubmit(); } };
 $("who").onchange = reset;  // a different person starts a fresh conversation
+
+// Mock tickets stay in the server's memory. This removes the ones made by the
+// signed-in employee, so the ticket task can be shown again from a clean start.
+$("clear").onclick = async () => {
+  const button = $("clear");
+  button.disabled = true;
+  try {
+    const response = await fetch("/api/demo/reset", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ employee_id: $("who").value }),
+    });
+    const body = await response.json();
+    if (!response.ok) throw new Error(body.detail || "failed");
+    reset();
+    button.textContent = `Cleared ${body.tickets_removed} ticket${body.tickets_removed === 1 ? "" : "s"}`;
+  } catch (error) {
+    button.textContent = "Could not clear";
+  }
+  setTimeout(() => { button.textContent = "Clear my demo tickets"; button.disabled = false; }, 2000);
+};
 
 for (const example of EXAMPLES) {
   const button = document.createElement("button");

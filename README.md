@@ -25,6 +25,7 @@ The deployed service sleeps after 15 minutes without visitors. If the page takes
 | "How much is the home office stipend?" | One policy search, a cited answer |
 | "Can I work from Portugal for six weeks starting April 5, 2027?" | Profile lookup, a rule check against the employee's records, the policy section read, a cited answer with alternatives |
 | "I want 3 days of PTO from March 15, 2027. If I can, open a ticket." | Rule check, a ticket preview, and the ticket is created only after you say yes |
+| The same ticket request a second time | The agent finds the existing ticket and does not open a duplicate. **Clear my demo tickets** (top right) removes it so the task can be run again |
 | "What is the PTO balance of Dana Okafor?" | Refused: an employee may see only their own records |
 | "What's a good recipe for banana bread?" | Declined as outside HR |
 

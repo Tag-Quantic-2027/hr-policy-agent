@@ -284,6 +284,28 @@ def propose_ticket(requester_id: str, category: str, summary: str, priority: str
     }
 
 
+def _next_ticket_number() -> int:
+    """One more than the highest number in use, so an id is never given out twice."""
+    return max([6000] + [int(t["ticket_id"][2:]) for t in created_tickets]) + 1
+
+
+def clear_created_tickets(requester_id: str) -> int:
+    """Remove the tickets this employee created through the assistant, and any
+    previews waiting for a yes. Seed tickets are never touched. Returns how many
+    tickets were removed.
+
+    This exists for the demo: a ticket made in one run would otherwise still be
+    there in the next, and the agent would rightly refuse to open a duplicate.
+    """
+    get_employee(requester_id)
+    kept = [t for t in created_tickets if t["employee_id"] != requester_id]
+    removed = len(created_tickets) - len(kept)
+    created_tickets[:] = kept  # changed in place: other code holds a reference to this list
+    for token in [k for k, preview in _pending.items() if preview["employee_id"] == requester_id]:
+        del _pending[token]
+    return removed
+
+
 def confirm_ticket(requester_id: str, token: str) -> dict:
     """Step 2: create exactly the ticket that was proposed. A token works once."""
     preview = _pending.get(token)
@@ -292,7 +314,7 @@ def confirm_ticket(requester_id: str, token: str) -> dict:
     del _pending[token]
 
     ticket = {
-        "ticket_id": f"T-{6001 + len(created_tickets)}",
+        "ticket_id": f"T-{_next_ticket_number()}",
         **preview,
         "status": "open",
         "created_date": TODAY.isoformat(),

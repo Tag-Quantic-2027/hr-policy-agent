@@ -95,3 +95,29 @@ def test_the_daily_limit_stops_further_requests():
         response = post(client, "Hi")
     assert response.status_code == 429
     assert model.requests == []
+
+
+def test_clearing_demo_tickets_removes_only_that_employees_created_tickets():
+    from mcp_servers import hr_data
+
+    def make(employee_id):
+        token = hr_data.propose_ticket(employee_id, "PTO Request", "3 days of PTO from March 15, 2027", "P3")
+        return hr_data.confirm_ticket(employee_id, token["confirmation_token"])["ticket"]
+
+    mine, theirs = make("E1008"), make("E1007")
+    seed_before = len([t for t in hr_data.SEED_TICKETS if t["employee_id"] == "E1008"])
+    hr_data.propose_ticket("E1008", "PTO Request", "a preview still waiting for a yes", "P3")
+    try:
+        with TestClient(create_app(ScriptedModel([]))) as client:
+            body = client.post("/api/demo/reset", json={"employee_id": "E1008"}).json()
+            assert body["tickets_removed"] >= 1
+            assert client.post("/api/demo/reset", json={"employee_id": "nobody"}).status_code == 400
+        assert mine not in hr_data.created_tickets
+        assert theirs in hr_data.created_tickets
+        assert hr_data.my_tickets("E1008")["ticket_count"] == seed_before  # seed tickets untouched
+        assert not [p for p in hr_data._pending.values() if p["employee_id"] == "E1008"]
+        # A new ticket never reuses an id that is still in use.
+        assert make("E1008")["ticket_id"] != theirs["ticket_id"]
+    finally:
+        hr_data.clear_created_tickets("E1008")
+        hr_data.clear_created_tickets("E1007")

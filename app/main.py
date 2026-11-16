@@ -4,6 +4,7 @@ Routes:
     GET  /               the chat page (one HTML file, app/static/index.html)
     GET  /api/employees  the people you can sign in as (a stand-in for a real login)
     POST /chat           one message in, one answer with its trace out
+    POST /api/demo/reset remove the mock tickets one employee created, so a demo can be repeated
     GET  /health         is the service up, and can it reach its MCP servers
     /mcp/policy/, /mcp/hr/   the MCP servers themselves
 
@@ -34,6 +35,10 @@ class ChatRequest(BaseModel):
     employee_id: str
     message: str = Field(min_length=1, max_length=2000)
     conversation_id: str = ""  # empty starts a new conversation
+
+
+class ResetRequest(BaseModel):
+    employee_id: str
 
 
 async def _sources(app: FastAPI, citations: list[str]) -> list[dict]:
@@ -101,6 +106,21 @@ def create_app(llm=None) -> FastAPI:
             }
             for e in hr_data.EMPLOYEES.values()
         ]
+
+    @app.post("/api/demo/reset")
+    async def reset_demo(body: ResetRequest, request: Request) -> dict:
+        # Tickets live in memory until the service restarts. Without this, a ticket
+        # made in one demo run is still there in the next, and the agent (correctly)
+        # declines to open a duplicate. Only assistant-made mock tickets are removed.
+        # This is a route for the page, not an MCP tool: the model cannot call it.
+        # It reaches the ticket store directly, so it needs the HR server in this service.
+        if body.employee_id not in hr_data.EMPLOYEES:
+            raise HTTPException(400, "Unknown employee id.")
+        removed = hr_data.clear_created_tickets(body.employee_id)
+        conversations = request.app.state.conversations
+        for key in [k for k, c in conversations.items() if c.employee_id == body.employee_id]:
+            del conversations[key]  # an old conversation would still remember the ticket
+        return {"employee_id": body.employee_id, "tickets_removed": removed}
 
     @app.post("/chat")
     async def chat(body: ChatRequest, request: Request) -> dict:
